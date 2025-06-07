@@ -1,0 +1,298 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0c3a1, #c9a782, #a97b5c);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #8b5e3c;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffd700;
+}
+
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-btn {
+    background: #5f3f0c;
+    color: #4a2e21;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.auth-btn:hover {
+    background: #ffcc00;
+    transform: scale(1.05);
+}
+
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: rgba(253, 248, 243, 0.95);
+    background-image: url('mental_health_banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #4a2e21;
+    border-radius: 15px;
+    margin: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta {
+    background: #8b5e3c;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta:hover {
+    background: #6d4931;
+}
+
+.donation-container {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #f5ebe0;
+    border-radius: 15px;
+    margin: 2rem;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    background: #c9a782;
+    border-radius: 10px;
+    margin: 1rem auto;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #8b5e3c;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #6d4931;
+}
+
+.campaign {
+    
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    text-align: center;
+}
+
+.campaigns h2 {
+    text-align: center;
+}
+
+.campaign img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.donate-btn {
+    background: #84531a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.donate-btn:hover {
+    background: #c7a81d;
+}
+
+/* Contact Section Styling */
+.contact {
+    padding: 3rem 2rem;
+    background: #d9bfa3;
+    text-align: center;
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    font-size: 2.2rem;
+    color: #4a2e21;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.contact a {
+    color: #8b5e3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact a:hover {
+    color: #6d4931;
+}
+
+.social-media {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #8b5e3c;
+    color: white;
+}
+.donate-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #673a10; /* Blue color */
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.donate-button:hover {
+    background-color: #867157; /* Darker blue on hover */
+}
+/* Align the Google Translate container to the right */
+#google_translate_element {
+    display: flex;
+    justify-content: flex-end; /* Move to the right */
+    align-items: flex-end; /* Align all items to the right */
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+}
+
+/* Style the Google Translate gadget */
+.goog-te-gadget {
+    background: linear-gradient(135deg, #8b5a2b, #c29a76); /* Gradient brown background */
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack items (dropdown + powered by text) */
+    align-items: flex-end; /* Ensure alignment to the right */
+    transition: transform 0.3s ease-in-out;
+    text-align: right;
+}
+
+/* Align the dropdown to the right */
+#google_translate_element select {
+    background: #f4e1d2; /* Soft beige background */
+    color: #4b2e1e; /* Dark brown text */
+    border: 2px solid #8b5a2b;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Move "Powered by Google Translate" below the dropdown and align to the right */
+.goog-te-gadget span {
+    display: block !important;
+    font-size: 12px;
+    color: black !important;
+    font-weight: bold;
+    margin-top: 5px; /* Space between dropdown and "Powered by" text */
+    text-align: right;
+    width: 100%;
+}
+
+/* Hide Google branding (optional) */
+.goog-logo-link {
+    display: none !important;
+}

@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0c3a1, #c9a782, #a97b5c);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #5a3e2b;
+    margin-bottom: 20px;
+}
+
+.dabba1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    background-color: #cfbda8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ 
+}
+
+.dabba1 img {
+    height: 120px;
+    width: 120px;
+    margin-right: 20px;
+}
+
+.text h3 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #4a3628;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.badges img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.progress-container {
+    width: 100%;
+    background: #ddd;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+ button{
+    background-color: #c9a782;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 30px;
+    width: 100px;
+    height: 50px;
+    a{
+        color: black;
+        text-decoration: none;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1rem;
+    }
+    a:hover{
+        cursor: pointer;
+        color: blue;
+    }
+
+}
+
+
+.progress-bar {
+    height: 20px;
+    background: #5a3e2b;
+    border-radius: 10px;
+    width: 75%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.leaderboard {
+    margin-top: 30px;
+}
+
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard th, .leaderboard td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.leaderboard th {
+    background: #8b6f47;
+    color: white;
+}
+
+.rank-1 { color: gold; font-weight: bold; }
+.rank-2 { color: silver; font-weight: bold; }
+.rank-3 { color: #cd7f32; font-weight: bold; }
+
+.footer {
+    padding-top: 50px;
+    margin-top: 50px;
+    text-align: center;
+    padding: 1.5rem;
+    background: #8b5e3c;
+    color: white;
+    border-radius: 0 0 15px 15px;
+}
+/* Align the Google Translate container to the right */
+#google_translate_element {
+    display: flex;
+    justify-content: flex-end; /* Move to the right */
+    align-items: flex-end; /* Align all items to the right */
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+}
+
+/* Style the Google Translate gadget */
+.goog-te-gadget {
+    background: linear-gradient(135deg, #8b5a2b, #c29a76); /* Gradient brown background */
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack items (dropdown + powered by text) */
+    align-items: flex-end; /* Ensure alignment to the right */
+    transition: transform 0.3s ease-in-out;
+    text-align: right;
+}
+
+/* Align the dropdown to the right */
+#google_translate_element select {
+    background: #f4e1d2; /* Soft beige background */
+    color: #4b2e1e; /* Dark brown text */
+    border: 2px solid #8b5a2b;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Move "Powered by Google Translate" below the dropdown and align to the right */
+.goog-te-gadget span {
+    display: block !important;
+    font-size: 12px;
+    color: black !important;
+    font-weight: bold;
+    margin-top: 5px; /* Space between dropdown and "Powered by" text */
+    text-align: right;
+    width: 100%;
+}
+
+/* Hide Google branding (optional) */
+.goog-logo-link {
+    display: none !important;
+}

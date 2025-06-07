@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CauseSphere - NGO Charity</title>
+    <link rel="stylesheet" href="ngo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<nav>
+    <div id="google_translate_element"></div>
+    </nav>
+    
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"><a href="#">NGO Charity</a></div>
+        <ul class="nav-links">
+            <li><a href="c1.html">Home</a></li>
+            <li><a href="#campaigns">Campaigns</a></li>
+            <li><a href="#sectors">Sectors</a></li>
+            <li><a href="#grant-makers">Grant Makers</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+      <!-- Hero Section with Improved Search Bar -->
+      <header class="hero">
+        <h1>Access information about <span>nonprofits</span> and <span>grant maker ngo's</span></h1>
+        <h3>Find NGOs and Make a Difference</h3>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search NGOs, Locations, Health, Education..." onfocus="showDropdown()" onkeyup="filterDropdown()">
+            <div class="dropdown" id="cityDropdown"></div>
+            <button class="search-btn" onclick="performSearch()"><i class="fas fa-search"></i> Search</button>
+        </div>
+        <div class="loading" id="loading">Fetching NGOs...</div>
+    <div class="ngo-list" id="ngoList"></div>
+
+        <div class="filter-tags">
+            <span class="chip" onclick="filterSearch('Health')">Health</span>
+            <span class="chip" onclick="filterSearch('Education')">Education</span>
+            <span class="chip" onclick="filterSearch('Livelihoods')">Livelihoods</span>
+            <span class="chip" onclick="filterSearch('Bengaluru')">Bengaluru</span>
+        </div>
+    </header>
+
+    <!-- Campaigns Section -->
+    <section id="campaigns" class="campaigns">
+        <h2>Active Fundraising Campaigns</h2>
+        <div class="campaign-list">
+            <div class="campaign-item">
+                <img src="pad2.png" alt="Education for Children">
+                <h3>Education for All</h3>
+                <p>Help provide education for underprivileged children.</p>
+                <a href="donate.html?name=Education Sector&amount=500000&raised=25000" target="_blank" class="donate-btn">Donate Now</a>
+            </div>
+            <div class="campaign-item">
+                <img src="women.png" alt="Healthcare Assistance">
+                <h3>Medical Aid for Women</h3>
+                <p>Support women's healthcare and wellness programs.</p>
+                <a href="donate.html?name=Medical Aid for Women&amount=100000&raised=9000" target="_blank" class="donate-btn">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 CauseSphere. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function performSearch() {
+            let query = document.getElementById("searchInput").value;
+            alert("Searching for: " + query);
+            // Here you can integrate a real search function
+        }
+
+        function filterSearch(category) {
+            document.getElementById("searchInput").value = category;
+            performSearch();
+        }
+
+        const cities = [
+            "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Pune", "Jaipur", "Lucknow", "Kanpur", "Nagpur", "Indore", "Thane", "Bhopal", "Visakhapatnam", "Patna", "Vadodara", "Ghaziabad", "Ludhiana"
+        ];
+        
+        function showDropdown() {
+            let dropdown = document.getElementById("cityDropdown");
+            dropdown.innerHTML = cities.map(city => `<div onclick='selectCity("${city}")'>${city}</div>`).join('');
+            dropdown.style.display = "block";
+        }
+        
+        function filterDropdown() {
+            let query = document.getElementById("searchInput").value.toLowerCase();
+            let dropdown = document.getElementById("cityDropdown");
+            let filteredCities = cities.filter(city => city.toLowerCase().includes(query));
+            dropdown.innerHTML = filteredCities.map(city => `<div onclick='selectCity("${city}")'>${city}</div>`).join('');
+        }
+        
+        function selectCity(city) {
+            document.getElementById("searchInput").value = city;
+            document.getElementById("cityDropdown").style.display = "none";
+            performSearch();
+        }
+        
+        function performSearch() {
+            let city = document.getElementById("searchInput").value;
+            if (cities.includes(city)) {
+                fetchNGOs(city);
+            } else {
+                alert("No NGOs found for this city.");
+            }
+        }
+
+        function fetchNGOs(city) {
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("ngoList").innerHTML = "";
+            
+            setTimeout(() => {
+                document.getElementById("loading").style.display = "none";
+                displayNGOs(city);
+            }, 2000);
+        }
+
+        function displayNGOs(city) {
+            let ngos = {
+                "Mumbai": [
+                    { name: "Helping Hands", info: "Supports children.", img: "ngo1.png", donate: "#" },
+                    { name: "Food Bank", info: "Provides meals.", img: "ngo2.jpeg", donate: "#" }
+                ],
+                "Delhi": [
+                    { name: "Hope Foundation", info: "Empowering people.", img: "ngo3.png", donate: "#" }
+                ],
+                "Lucknow": [
+                    { name: "Smile Foundation", info: "Education support.", img: "ngo4.webp", donate: "#" }
+                ]
+            };
+            let ngoList = document.getElementById("ngoList");
+            
+            if (ngos[city]) {
+                ngoList.innerHTML = ngos[city].map(ngo =>
+                    `<div class="ngo-item">
+                        <img src="${ngo.img}" alt="${ngo.name}">
+                        <h3>${ngo.name}</h3>
+                        <p>${ngo.info}</p>
+                         <a href="donate.html?name=${encodeURIComponent(ngo.name)}&amount=5000000&raised=250000" target="_blank" class="donate-btn">Donate Now</a>
+                    </div>`
+                ).join('');
+            } else {
+                ngoList.innerHTML = "<p>No NGOs available for this city.</p>";
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+              {pageLanguage: 'en'},
+              'google_translate_element'
+          );
+      } 
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

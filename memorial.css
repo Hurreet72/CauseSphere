@@ -1,0 +1,233 @@
+/* 🔹 Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0c3a1, #c9a782, #a97b5c);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: auto;
+    text-align: center;
+}
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-image: url('IMG-20250319-WA0007.jpg');
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 252, 252);
+    border-radius: 15px;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    z-index: 1;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.tribute-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.tribute-item {
+    background: #f7f3e4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.tribute-item:hover {
+    transform: scale(1.05);
+}
+.tribute-item img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+.donate-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #8b5e3c;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.donate-btn:hover {
+    background: #6d4931;
+}
+/* 🔹 Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0c3a1, #c9a782, #a97b5c);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🔹 Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #8b5e3c, #a97b5c);
+    padding: 1rem 2rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+.navbar a:hover {
+    background: #6d4931;
+    border-radius: 5px;
+}
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+.navbar ul li a:hover {
+    background: #ffcc00;
+    color: #4a2e21;
+    border-radius: 5px;
+}
+.info {
+    text-align: left;
+    margin-top: 10px;
+}
+footer {
+    text-align: center;
+    background: #8b5e3c;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+/* Contact Section */
+.contact {
+    background: #d9bfa3;
+    padding: 40px;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: #8b5e3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact a:hover {
+    color: #6d4931;
+}
+.hero{
+    background-image: url(d.png);
+}
+/* Align the Google Translate container to the right */
+#google_translate_element {
+    display: flex;
+    justify-content: flex-end; /* Move to the right */
+    align-items: flex-end; /* Align all items to the right */
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+}
+
+/* Style the Google Translate gadget */
+.goog-te-gadget {
+    background: linear-gradient(135deg, #8b5a2b, #c29a76); /* Gradient brown background */
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack items (dropdown + powered by text) */
+    align-items: flex-end; /* Ensure alignment to the right */
+    transition: transform 0.3s ease-in-out;
+    text-align: right;
+}
+
+/* Align the dropdown to the right */
+#google_translate_element select {
+    background: #f4e1d2; /* Soft beige background */
+    color: #4b2e1e; /* Dark brown text */
+    border: 2px solid #8b5a2b;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Move "Powered by Google Translate" below the dropdown and align to the right */
+.goog-te-gadget span {
+    display: block !important;
+    font-size: 12px;
+    color: black !important;
+    font-weight: bold;
+    margin-top: 5px; /* Space between dropdown and "Powered by" text */
+    text-align: right;
+    width: 100%;
+}
+
+/* Hide Google branding (optional) */
+.goog-logo-link {
+    display: none !important;
+}

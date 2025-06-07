@@ -1,0 +1,354 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0c3a1, #c9a782, #a97b5c);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: #8b5e3c;
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+/* Sections */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #4a2e21;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Programs Section */
+.program-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.program-item {
+    background: #f7f3e4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: 0.3s;
+}
+
+.program-item:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+    background: #d9bfa3;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: #8b5e3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact a:hover {
+    color: #6d4931;
+}
+/* General Donation Item Styling */
+.donation-item {
+    background: #fdf2e9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    background: #ddd;
+    border-radius: 10px;
+    height: 15px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background: #8b5e3c;
+    border-radius: 10px;
+}
+
+/* View Children Button */
+.view-children-btn {
+    background: #8b5e3c;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.view-children-btn:hover {
+    background: #6d4931;
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Children List */
+.children-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Child Profile */
+.child {
+    background: #f5ebe0;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.child img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Donate Button */
+.donate-btn {
+    display: inline-block;
+    background: #8b5e3c;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.donate-btn:hover {
+    background: #6d4931;
+}
+
+.donation-container {
+    display: flex;
+    flex-wrap: wrap;  /* Ensure wrapping on smaller screens */
+    justify-content: center;  /* Align items in center */
+    gap: 20px; /* Space between items */
+}
+
+.donation-item {
+    background: #fdf2e9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 48%; /* Set width to fit 2 items per row */
+    max-width: 450px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive: On smaller screens, make it single column */
+@media (max-width: 768px) {
+    .donation-item {
+        width: 100%;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #8b5e3c, #6d4931);
+    background-image: url("edu.jpeg");
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background: #ffcc00;
+    color: #4a2e21;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #ff9900;
+}
+
+/* Navbar */
+.navbar {
+    background: #8b5e3c;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    background: #ffcc00;
+    color: #4a2e21;
+    border-radius: 5px;
+}
+.navbar ul li:last-child a {
+    background: #ffcc00;
+    color: #4a2e21;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+
+.navbar ul li:last-child a:hover {
+    background: #ff9900;
+}
+
+footer {
+    background: #8b5e3c;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+/* Align the Google Translate container to the right */
+#google_translate_element {
+    display: flex;
+    justify-content: flex-end; /* Move to the right */
+    align-items: flex-end; /* Align all items to the right */
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+}
+
+/* Style the Google Translate gadget */
+.goog-te-gadget {
+    background: linear-gradient(135deg, #8b5a2b, #c29a76); /* Gradient brown background */
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack items (dropdown + powered by text) */
+    align-items: flex-end; /* Ensure alignment to the right */
+    transition: transform 0.3s ease-in-out;
+    text-align: right;
+}
+
+/* Align the dropdown to the right */
+#google_translate_element select {
+    background: #f4e1d2; /* Soft beige background */
+    color: #4b2e1e; /* Dark brown text */
+    border: 2px solid #8b5a2b;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Move "Powered by Google Translate" below the dropdown and align to the right */
+.goog-te-gadget span {
+    display: block !important;
+    font-size: 12px;
+    color: black !important;
+    font-weight: bold;
+    margin-top: 5px; /* Space between dropdown and "Powered by" text */
+    text-align: right;
+    width: 100%;
+}
+
+/* Hide Google branding (optional) */
+.goog-logo-link {
+    display: none !important;
+}

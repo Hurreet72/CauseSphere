@@ -1,0 +1,301 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #e0c3a1, #c9a782, #a97b5c);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    color: #4a2e21;
+    text-align: center;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #8b5e3c;
+    padding: 15px 20px;
+    color: white;
+}
+
+.navbar .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: rgba(253, 248, 243, 0.95);
+    background-image: url('hey3.png');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    color: #4a2e21;
+    
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero button {
+    background: #8b5e3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #6d4931;
+}
+
+/* Section Styles */
+.section {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: #8b5e3c;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    padding: 10px;
+    background: #e8f5e9;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Donation Section */
+.donate {
+    text-align: center;
+    background: #e0c3a1;
+    padding: 30px 20px;
+    border-radius: 8px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.donate h2 {
+    color: #4a2e21;
+}
+
+.donate form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.donate input {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.donate button {
+    background: #8b5e3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.donate button:hover {
+    background: #6d4931;
+}
+
+/* Footer */
+.footer {
+    background: #8b5e3c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.footer ul li {
+    display: inline;
+}
+.footer ul li a {
+    color: #f0e6d2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.footer ul li a:hover {
+    color: #ffd700;
+}
+.campaign-list {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.campaign-item {
+    background: #f7f3e4;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.campaign-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    height: 20px;
+    margin: 10px 0;
+}
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background-color: #8b5e3c;
+    border-radius: 10px;
+}
+.campaign-item a {
+    text-decoration: none;
+    color: #8b5e3c;
+    font-weight: bold;
+}
+/* Contact Section Styling */
+.contact {
+    padding: 3rem 2rem;
+    background: #d9bfa3;
+    text-align: center;
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    font-size: 2.2rem;
+    color: #4a2e21;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.contact a {
+    color: #8b5e3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact a:hover {
+    color: #6d4931;
+}
+
+.social-media {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+/* Align the Google Translate container to the right */
+#google_translate_element {
+    display: flex;
+    justify-content: flex-end; /* Move to the right */
+    align-items: flex-end; /* Align all items to the right */
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+}
+
+/* Style the Google Translate gadget */
+.goog-te-gadget {
+    background: linear-gradient(135deg, #8b5a2b, #c29a76); /* Gradient brown background */
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack items (dropdown + powered by text) */
+    align-items: flex-end; /* Ensure alignment to the right */
+    transition: transform 0.3s ease-in-out;
+    text-align: right;
+}
+
+/* Align the dropdown to the right */
+#google_translate_element select {
+    background: #f4e1d2; /* Soft beige background */
+    color: #4b2e1e; /* Dark brown text */
+    border: 2px solid #8b5a2b;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Move "Powered by Google Translate" below the dropdown and align to the right */
+.goog-te-gadget span {
+    display: block !important;
+    font-size: 12px;
+    color: black !important;
+    font-weight: bold;
+    margin-top: 5px; /* Space between dropdown and "Powered by" text */
+    text-align: right;
+    width: 100%;
+}
+
+/* Hide Google branding (optional) */
+.goog-logo-link {
+    display: none !important;
+}

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children's Fundraising - CauseSphere</title>
+    <link rel="stylesheet" href="education.css">
+</head>
+<nav>
+    <div id="google_translate_element"></div>
+    </nav>
+    
+<body>
+    <header class="hero">
+        <h1>📚 Education for a Better Future</h1>
+        <p>Empowering minds through knowledge and learning</p>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="c1.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#impact">Our Impact</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#donate" class="donate-btn">Donate</a></li>
+        </ul>
+    </nav>
+    
+
+    <section id="about" class="about">
+        <h2>About Our Mission</h2>
+        <p>We strive to provide quality education to underprivileged children worldwide. Join us in making education accessible for all.</p>
+    </section>
+    <section id="programs" class="programs">
+        <h2>Our Programs</h2>
+        <div class="program-list">
+            <div class="program-item">
+                <h3>📖 Free Schooling</h3>
+                <p>Providing free primary and secondary education to children in need.</p>
+            </div>
+            <div class="program-item">
+                <h3>💻 Digital Learning</h3>
+                <p>Empowering students with digital resources and online classes.</p>
+            </div>
+            <div class="program-item">
+                <h3>🎓 Scholarship Programs</h3>
+                <p>Offering scholarships to talented students for higher education.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="donation-categories">
+        <h2>Donation Categories</h2>
+      
+<!-- Education for Underprivileged Children -->
+<div class="donation-item">
+    <h3>📚 Education for Underprivileged Children</h3>
+    <p>Help provide education to children who lack access to schools.</p>
+    <p><strong>Target:</strong> ₹500,000 | <strong>Raised:</strong> ₹250,000</p>
+    <div class="progress-bar"><span style="width: 50%;"></span></div>
+
+    <!-- View Children Button -->
+    <button class="view-children-btn" onclick="openChildrenList()">👦 View Children</button>
+</div>
+
+<!-- Modal for Children List -->
+<div id="children-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeChildrenList()">&times;</span>
+        <h3>👶 Children in Need</h3>
+        <div class="children-list">
+            
+            <!-- Child 1 -->
+            <div class="child">
+                <img src="boy.png" alt="Rohan Sharma">
+                <h4>Rohan Sharma</h4>
+                <p>Lost both parents and needs support for education.</p>
+                <a href="donate.html?name=Rohan%20Sharma&amount=50000&raised=15000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 2 -->
+            <div class="child">
+                <img src="pad2.png" alt="Priya Kumari">
+                <h4>Priya Kumari</h4>
+                <p>Wants to study but her family can't afford school fees.</p>
+                <a href="donate.html?name=Priya%20Kumari&amount=60000&raised=20000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 3 -->
+            <div class="child">
+                <img src="boy2.png" alt="Amit Verma">
+                <h4>Amit Verma</h4>
+                <p>Dreams of becoming a doctor but struggles with tuition costs.</p>
+                <a href="donate.html?name=Amit%20Verma&amount=75000&raised=25000" class="donate-btn">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Modal Functionality -->
+<script>
+function openChildrenList() {
+    document.getElementById("children-modal").style.display = "flex";
+}
+
+function closeChildrenList() {
+    document.getElementById("children-modal").style.display = "none";
+}
+</script>
+
+<div class="donation-container">
+<!-- Orphaned & Homeless Children Support -->
+<div class="donation-item">
+    <h3>🏡 Orphaned & Homeless Children Support</h3>
+    <p>Fund shelters and basic needs for orphaned and homeless kids.</p>
+    <p><strong>Target:</strong> ₹750,000 | <strong>Raised:</strong> ₹400,000</p>
+    <div class="progress-bar"><span style="width: 53%;"></span></div>
+
+    <!-- View Children Button -->
+    <button class="view-children-btn" onclick="openOrphanChildrenList()">👦 View Children</button>
+</div>
+
+<!-- Modal for Orphaned Children -->
+<div id="orphan-children-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeOrphanChildrenList()">&times;</span>
+        <h3>👶 Orphaned & Homeless Children</h3>
+        <div class="children-list">
+            
+            <!-- Child 1 -->
+            <div class="child">
+                <img src="mal1.png" alt="Child 1">
+                <h4>Aarav Mehta</h4>
+                <p>Lost both parents in an accident, needs support for shelter and schooling.</p>
+                <a href="donate.html?name=Aarav%20Mehta&amount=50000&raised=15000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 2 -->
+            <div class="child">
+                <img src="o1.png" alt="Child 2">
+                <h4>Sneha Roy</h4>
+                <p>Currently living in a foster home but needs funds for education and care.</p>
+                <a href="donate.html?name=Sneha%20Roy&amount=60000&raised=20000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 3 -->
+            <div class="child">
+                <img src="o3.png" alt="Child 3">
+                <h4>Rohan Das</h4>
+                <p>Struggling to get proper nutrition and a safe home, needs urgent support.</p>
+                <a href="donate.html?name=Rohan%20Das&amount=75000&raised=25000" class="donate-btn">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+function openOrphanChildrenList() {
+    document.getElementById("orphan-children-modal").style.display = "flex";
+}
+
+function closeOrphanChildrenList() {
+    document.getElementById("orphan-children-modal").style.display = "none";
+}
+</script>
+
+
+       <!-- Malnutrition & Hunger Relief -->
+<div class="donation-item">
+    <h3>🍽 Malnutrition & Hunger Relief</h3>
+    <p>Fight child hunger by providing nutritious food.</p>
+    <p><strong>Target:</strong> ₹600,000 | <strong>Raised:</strong> ₹320,000</p>
+    <div class="progress-bar"><span style="width: 53%;"></span></div>
+
+    <!-- View Children Button -->
+    <button class="view-children-btn" onclick="openHungerChildrenList()">👦 View Children</button>
+</div>
+
+<!-- Modal for Malnourished Children -->
+<div id="hunger-children-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeHungerChildrenList()">&times;</span>
+        <h3>🥦 Malnourished Children in Need</h3>
+        <div class="children-list">
+            
+            <!-- Child 1 -->
+            <div class="child">
+                <img src="mal1.png" alt="Child 1">
+                <h4>Saif Khan</h4>
+                <p>Severely malnourished, needs daily meals and medical care.</p>
+                <a href="donate.html?name=Aisha%20Khan&amount=40000&raised=10000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 2 -->
+            <div class="child">
+                <img src="mal2.png" alt="Child 2">
+                <h4>Rahul Sharma</h4>
+                <p>Suffering from severe malnutrition, needs nutritious food.</p>
+                <a href="donate.html?name=Rahul%20Sharma&amount=50000&raised=20000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 3 -->
+            <div class="child">
+                <img src="mal3.png" alt="Child 3">
+                <h4>Neeraj Patel</h4>
+                <p>Needs urgent medical treatment due to lack of proper nutrition.</p>
+                <a href="donate.html?name=Meera%20Patel&amount=75000&raised=25000" class="donate-btn">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+function openHungerChildrenList() {
+    document.getElementById("hunger-children-modal").style.display = "flex";
+}
+
+function closeHungerChildrenList() {
+    document.getElementById("hunger-children-modal").style.display = "none";
+}
+</script>
+
+
+        <!-- Medical Aid for Critically Ill Children -->
+<div class="donation-item">
+    <h3>🏥 Medical Aid for Critically Ill Children</h3>
+    <p>Support treatments for children suffering from severe illnesses.</p>
+    <p><strong>Target:</strong> ₹1,000,000 | <strong>Raised:</strong> ₹650,000</p>
+    <div class="progress-bar"><span style="width: 65%;"></span></div>
+
+    <!-- View Children Button -->
+    <button class="view-children-btn" onclick="openMedicalChildrenList()">👶 View Children</button>
+</div>
+
+<!-- Modal for Critically Ill Children -->
+<div id="medical-children-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeMedicalChildrenList()">&times;</span>
+        <h3>🏥 Critically Ill Children in Need</h3>
+        <div class="children-list">
+            
+            <!-- Child 1 -->
+            <div class="child">
+                <img src="s1.png" alt="Child 1">
+                <h4>Ramesh Kumar</h4>
+                <p>Diagnosed with a rare heart condition, needs urgent surgery.</p>
+                <a href="donate.html?name=Ramesh%20Kumar&amount=300000&raised=100000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 2 -->
+            <div class="child">
+                <img src="s2.png" alt="Child 2">
+                <h4>Sneha Verma</h4>
+                <p>Fighting blood cancer, requires chemotherapy treatment.</p>
+                <a href="donate.html?name=Sneha%20Verma&amount=400000&raised=200000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 3 -->
+            <div class="child">
+                <img src="s3.png" alt="Child 3">
+                <h4>Aarav Singh</h4>
+                <p>Suffering from kidney failure, needs a transplant.</p>
+                <a href="donate.html?name=Aarav%20Singh&amount=500000&raised=250000" class="donate-btn">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+function openMedicalChildrenList() {
+    document.getElementById("medical-children-modal").style.display = "flex";
+}
+
+function closeMedicalChildrenList() {
+    document.getElementById("medical-children-modal").style.display = "none";
+}
+</script>
+
+
+      <!-- Street Children Rehabilitation -->
+<div class="donation-item">
+    <h3>👕 Street Children Rehabilitation</h3>
+    <p>Rescue and rehabilitate children living on the streets.</p>
+    <p><strong>Target:</strong> ₹800,000 | <strong>Raised:</strong> ₹450,000</p>
+    <div class="progress-bar"><span style="width: 56%;"></span></div>
+
+    <!-- View Children Button -->
+    <button class="view-children-btn" onclick="openStreetChildrenList()">👶 View Children</button>
+</div>
+
+<!-- Modal for Street Children -->
+<div id="street-children-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeStreetChildrenList()">&times;</span>
+        <h3>🏠 Street Children in Need</h3>
+        <div class="children-list">
+            
+            <!-- Child 1 -->
+            <div class="child">
+                <img src="o2.png" alt="Child 1">
+                <h4>Rahul Gupta</h4>
+                <p>Orphaned at a young age, survives by begging on streets.</p>
+                <a href="donate.html?name=Rahul%20Gupta&amount=50000&raised=20000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 2 -->
+            <div class="child">
+                <img src="o1.png" alt="Child 2">
+                <h4>Pooja Sharma</h4>
+                <p>Escaped child labor, dreams of going to school.</p>
+                <a href="donate.html?name=Pooja%20Sharma&amount=60000&raised=25000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 3 -->
+            <div class="child">
+                <img src="o3.png" alt="Child 3">
+                <h4>Aman Verma</h4>
+                <p>Left alone after a disaster, needs shelter and education.</p>
+                <a href="donate.html?name=Aman%20Verma&amount=70000&raised=30000" class="donate-btn">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+function openStreetChildrenList() {
+    document.getElementById("street-children-modal").style.display = "flex";
+}
+
+function closeStreetChildrenList() {
+    document.getElementById("street-children-modal").style.display = "none";
+}
+</script>
+
+
+       <!-- Child Labor & Trafficking Rescue -->
+<div class="donation-item">
+    <h3>🔴 Child Labor & Trafficking Rescue</h3>
+    <p>Rescue kids forced into labor and provide them a safe future.</p>
+    <p><strong>Target:</strong> ₹900,000 | <strong>Raised:</strong> ₹500,000</p>
+    <div class="progress-bar"><span style="width: 56%;"></span></div>
+
+    <!-- View Children Button -->
+    <button class="view-children-btn" onclick="openLaborChildrenList()">👶 View Children</button>
+</div>
+
+<!-- Modal for Child Labor Victims -->
+<div id="labor-children-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLaborChildrenList()">&times;</span>
+        <h3>🛑 Children Rescued from Labor & Trafficking</h3>
+        <div class="children-list">
+            
+            <!-- Child 1 -->
+            <div class="child">
+                <img src="mal1.png" alt="Child 1">
+                <h4>Manoj Kumar</h4>
+                <p>Forced to work in factories at the age of 8, now rescued.</p>
+                <a href="donate.html?name=Manoj%20Kumar&amount=50000&raised=20000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 2 -->
+            <div class="child">
+                <img src="mal2.png" alt="Child 2">
+                <h4>Neel Sharma</h4>
+                <p>Victim of human trafficking, needs a safe shelter and education.</p>
+                <a href="donate.html?name=Neha%20Sharma&amount=60000&raised=25000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 3 -->
+            <div class="child">
+                <img src="mal3.png" alt="Child 3">
+                <h4>Arjun Verma</h4>
+                <p>Rescued from child labor, wants to continue his education.</p>
+                <a href="donate.html?name=Arjun%20Verma&amount=70000&raised=30000" class="donate-btn">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+function openLaborChildrenList() {
+    document.getElementById("labor-children-modal").style.display = "flex";
+}
+
+function closeLaborChildrenList() {
+    document.getElementById("labor-children-modal").style.display = "none";
+}
+</script>
+
+
+       <!-- Special Needs Children Assistance -->
+<div class="donation-item">
+    <h3>💙 Special Needs Children Assistance</h3>
+    <p>Help kids with disabilities get the care they deserve.</p>
+    <p><strong>Target:</strong> ₹700,000 | <strong>Raised:</strong> ₹390,000</p>
+    <div class="progress-bar"><span style="width: 56%;"></span></div>
+
+    <!-- View Children Button -->
+    <button class="view-children-btn" onclick="openSpecialNeedsChildrenList()">👶 View Children</button>
+</div>
+
+<!-- Modal for Special Needs Children -->
+<div id="special-needs-children-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSpecialNeedsChildrenList()">&times;</span>
+        <h3>🩵 Children with Special Needs</h3>
+        <div class="children-list">
+            
+            <!-- Child 1 -->
+            <div class="child">
+                <img src="s1.png" alt="Child 1">
+                <h4>Aarav Mehta</h4>
+                <p>Born with cerebral palsy, needs funds for therapy sessions.</p>
+                <a href="donate.html?name=Aarav%20Mehta&amount=50000&raised=20000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 2 -->
+            <div class="child">
+                <img src="s2.png" alt="Child 2">
+                <h4>Riya Kapoor</h4>
+                <p>Hearing impaired, needs a cochlear implant to communicate better.</p>
+                <a href="donate.html?name=Riya%20Kapoor&amount=60000&raised=25000" class="donate-btn">Donate Now</a>
+            </div>
+
+            <!-- Child 3 -->
+            <div class="child">
+                <img src="s3.png" alt="Child 3">
+                <h4>Vikram Joshi</h4>
+                <p>Diagnosed with autism, requires special education & support.</p>
+                <a href="donate.html?name=Vikram%20Joshi&amount=70000&raised=30000" class="donate-btn">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- JavaScript for Modal -->
+<script>
+function openSpecialNeedsChildrenList() {
+    document.getElementById("special-needs-children-modal").style.display = "flex";
+}
+
+function closeSpecialNeedsChildrenList() {
+    document.getElementById("special-needs-children-modal").style.display = "none";
+}
+</script>
+
+
+    </section>
+
+    <section id="impact" class="impact">
+        <h2>Our Impact</h2>
+        <p>We have reached over 500,000 students globally, providing them with access to quality education and better opportunities.</p>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@causesphere.com</p>
+        <p>Phone: +91 98765-43210</p>
+    </section>
+    
+    <section id="donate" class="donate">
+        <h2>Support Our Cause</h2>
+        <p>Your contribution can help provide education to children in need.</p>
+    </section>
+
+
+    <footer>
+        <p>© 2025 CauseSphere - Helping Children in Need</p>
+    </footer>
+    <script src="script.js"></script>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        } 
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+</html>

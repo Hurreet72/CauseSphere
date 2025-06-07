@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Help - Donate Now</title>
+    <link rel="stylesheet" href="medical.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<nav>
+    <div id="google_translate_element"></div>
+    </nav>
+    
+<body>
+
+    
+    
+<nav class="navbar">
+    <div class="logo">
+        <div class="logo"><a href="#">Medical Help</a></div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="c1.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#hospitals">Hospitals</a></li>
+        <li><a href="#medical-cases">Urgent Medical Fundraisers</a></li>
+    </ul>
+</nav>
+
+<h1>Medical-help</h1>
+    
+    <header class="hero">
+        <h1>Every Second Counts - Save a Life</h1>
+        <p>Your donation can provide life-saving medical treatment to those in urgent need.</p>
+        <button class="prev" onclick="changeBackground(-1)">&#10094;</button>  
+        <button class="next" onclick="changeBackground(1)">&#10095;</button>  
+    </header>
+    
+    <script src="script.js"></script>
+
+       <section id="medical-cases" class="medical-cases">
+
+        <h2>Urgent Medical Fundraisers</h2>
+
+        <div class="cases-grid">
+            <div class="case">
+                <img src="cancer.png" alt="Patient 1">
+                <h3>Rajiv Sharma - Cancer Treatment</h3>
+                <p>Needs ₹8,00,000 for chemotherapy</p>
+                <p>Raised: <b>₹5,40,000</b> of ₹8,00,000</p>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 67%;">67% Funded</div>
+                </div>
+                <a href="donate.html?name=Rajiv%20Sharma&amount=800000&raised=540000">Donate Now</a>
+            </div>
+
+            <div class="case">
+                <img src="heart.png" alt="Patient 2">
+                <h3>Ananya Gupta - Heart Surgery</h3>
+                <p>Needs ₹12,00,000 for open-heart surgery</p>
+                <p>Raised: <b>₹7,80,000</b> of ₹12,00,000</p>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 65%;">65% Funded</div>
+                </div>
+                <a href="donate.html?name=Ananya%20Gupta&amount=1200000&raised=780000">Donate Now</a>
+            </div>
+
+            <div class="case">
+                <img src="kidney.png" alt="Patient 3">
+                <h3>Amit Verma - Kidney Transplant</h3>
+                <p>Needs ₹10,00,000 for transplant</p>
+                <p>Raised: <b>₹4,50,000</b> of ₹10,00,000</p>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 45%;">45% Funded</div>
+                </div>
+                <a href="donate.html?name=Amit%20Verma&amount=1000000&raised=450000">Donate Now</a>
+            </div>
+        </div>
+        </section>
+    </section>
+
+  
+    <section id="hospitals" class="hospitals">
+        
+        <h2>Partner Hospitals for Medical Assistance</h2>
+        <div class="hospital-list">
+            <div class="hospital">
+               <img src="apollo.png" alt="Hospital 1">
+                <h3>Apollo Hospitals</h3>
+                <p>Location: Delhi, Mumbai, Chennai</p>
+                <p>Specialization: Cancer, Cardiology, Transplants</p>
+            </div>
+
+            <div class="hospital">
+                <img src="fortis.png" alt="Hospital 2">
+                <h3>Fortis Healthcare</h3>
+                <p>Location: Bangalore, Pune, Kolkata</p>
+                <p>Specialization: Neurology, Orthopedics, Pediatrics</p>
+            </div>
+
+            <div class="hospital">
+                <img src="aiims.png" alt="Hospital 3">
+                <h3>AIIMS</h3>
+                <p>Location: New Delhi</p>
+                <p>Specialization: Multi-Specialty, Affordable Treatments</p>
+            </div>
+        </div>
+    
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 CauseSphere. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToDonate() {
+            document.querySelector(".medical-cases").scrollIntoView({ behavior: "smooth" });
+        }
+
+   
+    function revealSections() {
+        let sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+            let sectionTop = section.getBoundingClientRect().top;
+            let windowHeight = window.innerHeight;
+            if (sectionTop < windowHeight - 100) {
+                section.classList.add("show");
+            }
+        });
+    }
+
+    
+    window.addEventListener("scroll", revealSections);
+    revealSections(); // Call once to show visible sections on load
+
+    
+        let images = ['m1.png', 'm2.png', 'm3.png']; // Add your image filenames here
+    let currentIndex = 0;
+    
+    function changeBackground(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+    
+        document.querySelector('.hero').style.backgroundImage = `url('${images[currentIndex]}')`;
+    }
+    
+    </script>
+
+<script src="script.js"></script>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        } 
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+</html>

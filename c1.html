@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CauseSphere - Crowdfunding for Social Impact</title>
+    <link rel="stylesheet" href="c1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Chatbot styles */
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        #chatbot-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #chatbot-body {
+            padding: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        #chatbot-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+            border-radius: 0 0 8px 8px;
+        }
+
+        #chatbot-input:focus {
+            outline: none;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+        }
+
+        .user-message {
+            text-align: right;
+            background-color: #e1f5fe;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .bot-message {
+            text-align: left;
+            background-color: #f1f1f1;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        /* Button to toggle chatbot */
+        #toggle-chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-btn" onclick="toggleChatbot()">💬</div>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">
+            <span>CauseSphere Chatbot</span>
+            <button class="close-btn" onclick="toggleChatbot()">X</button>
+        </div>
+        <div class="chatbot-body" id="chatbot-body">
+            <!-- Chat messages will be shown here -->
+        </div>
+        <input type="text" id="user-input" placeholder="Ask your question..." />
+        <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo"> 
+            <img class="h" src="logo.png" alt="CauseSphere Logo" >
+        </div>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="campaign.html">Campaigns</a></li>
+            <li><a href="achievemnet.html">Achievements</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li class="dropdown">
+                <button class="dropbtn">Categories</button>
+                <div class="dropdown-content">
+                    <a href="women-girls.html">Women & Girls</a>
+                    <a href="medical_help.html">Medical Help</a>
+                    <a href="ngo-charity.html">NGO Charity</a>
+                    <a href="food-hunger.html">Food & Hunger</a>
+                    <a href="animals-environment.html">Animals & Environment</a>
+                    <a href="education.html">Education</a>
+                    <a href="memorial.html">Memorial</a>
+                    <a href="mental-health.html">Mental Health</a>
+                </div>
+            </li>
+        </ul>
+        <div class="auth-buttons">
+            <button onclick="openModal('loginModal')" class="auth-btn login">Login</button>
+            <button onclick="openModal('registerModal')" class="auth-btn signup">Register</button>
+        </div>
+
+    </nav>
+    <nav>
+        <div id="google_translate_element"></div>
+        </nav>
+        
+        <header class="hero">
+            <button class="prev" onclick="changeBackground(-1)">&#10094;</button>  
+            <div class="hero-content">
+                <h1>Be the Spark That Ignites Change</h1>
+                <br>
+                <p>An AI-powered global crowdfunding platform ensuring transparency and impact.</p>
+                <br>
+                <button class="cta">Explore Campaigns</button>
+            </div>
+            <button class="next" onclick="changeBackground(1)">&#10095;</button>  
+        </header>
+        
+        <script src="script.js"></script>
+
+        <!-- 🔹 Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('loginModal')">&times;</span>
+        <h1>Login</h1>
+        <form id="loginForm" onsubmit="return loginUser(event)">
+            <div class="input-box">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <i class="fa-solid fa-envelope icon"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="switchToRegister()">Register</a></p>
+
+        <div class="social-login">
+            <button class="google-login" onclick="googleLogin()">
+                <i class="fa-brands fa-google"></i> Continue with Google
+            </button>
+            <button class="facebook-login" onclick="facebookLogin()">
+                <i class="fa-brands fa-facebook"></i> Continue with Facebook
+            </button>
+        </div>
+
+    </div>
+    
+    
+</div>
+
+<script>
+    // 🔹 Open Modal
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "flex";
+        document.body.classList.add("modal-open");
+    }
+
+    // 🔹 Close Modal (✅ Fix: Proper modalId pass ho raha hai)
+    function closeModal(modalId) {
+        let modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = "none";
+            document.body.classList.remove("modal-open");
+        }
+    }
+
+    // 🔹 Switch to Register Modal
+    function switchToRegister() {
+        closeModal('loginModal');
+        openModal('registerModal');
+    }
+
+    // 🔹 Switch to Login Modal
+    function switchToLogin() {
+        closeModal('registerModal');
+        openModal('loginModal');
+    }
+
+    // 🔹 Close Modal When Clicked Outside
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            closeModal(event.target.id);
+        }
+    };
+    document.getElementById("togglePassword").addEventListener("click", function () {
+    let passwordInput = document.getElementById("loginPassword");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text"; // Show password
+        this.classList.remove("fa-eye-slash");
+        this.classList.add("fa-eye"); // Change icon
+    } else {
+        passwordInput.type = "password"; // Hide password
+        this.classList.remove("fa-eye");
+        this.classList.add("fa-eye-slash"); // Revert icon
+    }
+});
+
+ 
+function googleLogin() {
+    alert("Google login integration is required.");
+}
+
+function facebookLogin() {
+    alert("Facebook login integration is required.");
+}
+
+
+</script>
+
+
+
+
+
+    <!-- 🔹 Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h1>Register</h1>
+            <form id="registerForm" onsubmit="return registerUser(event)">
+                <div class="input-box">
+                    <input type="text" id="registerName" placeholder="Full Name" required>
+                    <i class="fa-solid fa-user icon"></i>
+                </div>
+            <div class="input-box">
+                <input type="date" id="date" placeholder="Date" required>
+                <i class="fa-solid fa-date-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="tel" id="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+                <div class="input-box">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                    <i class="fa-solid fa-envelope icon"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fa-solid fa-eye toggle-password" id="toggleRegisterPassword"></i>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <div class="switch">
+                Already have an account? <a href="#" onclick="switchToLogin()">Login</a>
+            </div>
+            <div class="social-login">
+                <button class="google-login" onclick="googleLogin()">
+                    <i class="fa-brands fa-google"></i> Continue with Google
+                </button>
+                <button class="facebook-login" onclick="facebookLogin()">
+                    <i class="fa-brands fa-facebook"></i> Continue with Facebook
+                </button>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <script>
+        // 🔹 Open Modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "flex";
+        }
+    
+        // 🔹 Close Modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+    
+        // 🔹 Switch to Register Modal
+        function switchToRegister() {
+            closeModal('loginModal');
+            openModal('registerModal');
+        }
+    
+        // 🔹 Switch to Login Modal
+        function switchToLogin() {
+            closeModal('registerModal');
+            openModal('loginModal');
+        }
+    
+        // 🔹 Close Modal on Background Click
+        window.onclick = function(event) {
+            let loginModal = document.getElementById('loginModal');
+            let registerModal = document.getElementById('registerModal');
+            if (event.target === loginModal) {
+                closeModal('loginModal');
+            } else if (event.target === registerModal) {
+                closeModal('registerModal');
+            }
+        };
+        document.addEventListener("DOMContentLoaded", function () {
+
+    // 🔹 Register Modal ke Eye Icon Toggle (Alag se Event Bind)
+    let toggleRegisterPassword = document.getElementById("toggleRegisterPassword");
+    let registerPasswordInput = document.getElementById("registerPassword");
+
+    toggleRegisterPassword.addEventListener("click", function () {
+        if (registerPasswordInput.type === "password") {
+            registerPasswordInput.type = "text";
+            toggleRegisterPassword.classList.remove("fa-eye-slash");
+            toggleRegisterPassword.classList.add("fa-eye");
+        } else {
+            registerPasswordInput.type = "password";
+            toggleRegisterPassword.classList.remove("fa-eye");
+            toggleRegisterPassword.classList.add("fa-eye-slash");
+        }
+    });
+});
+
+    </script>
+
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        let dropdown = document.querySelector(".dropdown");
+        let menu = document.querySelector(".dropdown-content");
+    
+        dropdown.addEventListener("mouseenter", function () {
+            menu.style.display = "block";
+        });
+    
+        dropdown.addEventListener("mouseleave", function () {
+            menu.style.display = "none";
+        });
+    });
+    </script>
+    
+
+
+        <div class="donation-ticker">
+            <div class="ticker-content">
+                <span>✱ BRIJESH PANDEY just donated <span class="amount">₹100</span></span>
+                <span>✱ Akbar Patel just donated <span class="amount">₹50</span></span>
+                <span>✱ Sarika Desai just donated <span class="amount">₹30,000</span></span>
+                <span>✱ Ananya Sharma just donated <span class="amount">₹500</span></span>
+                <span>✱ Rahul Mehta just donated <span class="amount">₹5,000</span></span>
+                <span>✱ Priya Verma just donated <span class="amount">₹1,200</span></span>
+                <span>✱ Arjun Kapoor just donated <span class="amount">₹250</span></span>
+                <span>✱ Neha Reddy just donated <span class="amount">₹10,000</span></span>
+                <span>✱ Vikram Singh just donated <span class="amount">₹750</span></span>
+                <span>✱ Sanya Iyer just donated <span class="amount">₹5,500</span></span>
+                <span>✱ Rajesh Khanna just donated <span class="amount">₹2,000</span></span>
+                <span>✱ Divya Nair just donated <span class="amount">₹6,700</span></span>
+                <span>✱ Kunal Malhotra just donated <span class="amount">₹3,300</span></span>
+                <span>✱ Meera Joshi just donated <span class="amount">₹9,000</span></span>
+            </div>
+        </div>
+
+
+        <section class="trusted-platform">
+            <h2>India’s most trusted online donation platform</h2>
+            <div class="stats">
+                <div class="stat">
+                    <h3>2.7M+</h3>
+                    <p>Donations</p>
+                </div>
+                <div class="stat">
+                    <h3>15M+</h3>
+                    <p>Lives Impacted</p>
+                </div>
+                <div class="stat">
+                    <h3>3000+</h3>
+                    <p>Verified Non Profits</p>
+                </div>
+                <div class="stat">
+                    <h3>300+</h3>
+                    <p>Corporate Partners</p>
+                </div>
+            </div>
+        </section>
+                
+        
+
+    <div class="how">
+    <h1>Be part of CauseSphere</h1>
+    <img class="hey" src="image-removebg-preview (6).png">
+    
+    
+    <section id="campaigns" class="campaigns">
+        <h2>Featured Campaigns</h2>
+        <div class="campaign">
+            <h3>Medical Help for Children</h3>
+            <p>Target: ₹1,00,000 | Raised: ₹70,500</p>
+            <progress value="70500" max="100000"></progress>
+        </div>
+        <div class="campaign">
+            <h3>Animal Rescue Initiative</h3>
+            <p>Target: ₹50,000 | Raised: ₹40,200</p>
+            <progress value="40200" max="50000"></progress>
+        </div>
+    </section>
+
+    <section class="fundraising">
+        <div class="fundraising-content">
+            <h2>Raise funds for your cause!</h2>
+            <p>Onboard on CauseSphere and create impact by raising funds for your initiatives</p>
+            <div class="fundraising-buttons">
+                <button class="enroll-btn">Enroll your NGO on CauseSphere</button>
+                <button class="raise-btn">Raise funds for a listed NGO</button>
+            </div>
+        </div>
+    </section>
+    
+    
+    <footer class="footer">
+        <p>&copy; 2025 CauseSphere. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+    let images = ['hey1.png', 'hey2.png', 'hey3.png']; // Add your image filenames here
+let currentIndex = 0;
+
+function changeBackground(direction = 1) {
+        currentIndex = (currentIndex + direction) % images.length;
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+
+        let hero = document.querySelector('.hero');
+        hero.classList.add('fade-out');
+
+        setTimeout(() => {
+            hero.style.backgroundImage = `url('${images[currentIndex]}')`;
+            hero.classList.remove('fade-out');
+        }, 500);
+    }
+
+    setInterval(() => {
+        changeBackground(1);
+    }, 4000);
+
+    // 🔹 Pop-up Modal Functions
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "flex";
+        document.body.classList.add("modal-open");
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+        document.body.classList.remove("modal-open");
+    }
+
+    function switchToRegister() {
+        closeModal('loginModal');
+        openModal('registerModal');
+    }
+
+    function switchToLogin() {
+        closeModal('registerModal');
+        openModal('loginModal');
+    }
+
+    window.onclick = function(event) {
+        let loginModal = document.getElementById('loginModal');
+        let registerModal = document.getElementById('registerModal');
+        if (event.target === loginModal) {
+            closeModal('loginModal');
+        } else if (event.target === registerModal) {
+            closeModal('registerModal');
+        }
+    };
+</script>
+<script src="script.js"></script>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        } 
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    // FAQs
+         const faqData = {
+            "What is CauseSphere?": "CauseSphere is an AI-integrated crowdfunding platform designed to connect donors and beneficiaries securely while ensuring transparency.",
+            "How does CauseSphere ensure transparency?": "We provide real-time fund tracking, AI-driven verification, and direct fund transfers to hospitals and NGOs.",
+            "How can I donate?": "You can donate through our secure online platform using multiple payment options.",
+            "Where does my donation go?": "All donations go directly to verified hospitals and NGOs without intermediaries.",
+            "Can I track how my donation is used?": "Yes! Our real-time fund utilization dashboard allows you to see exactly how your donations are making an impact.",
+            "How does CauseSphere prevent fraud?": "Our AI-driven review system and strict verification processes ensure all fundraising campaigns are legitimate.",
+            "Are my payment details secure?": "Yes, we use encrypted transactions to ensure your payment details remain safe.",
+            "Hi": "Hello! How can I assist you today?",
+            "How are you?": "I'm just a bot, but I'm doing great! How can I help you?"
+        };
+
+    // Toggle chatbot visibility
+    function toggleChatbot() {
+        const chatbot = document.getElementById('chatbot');
+        chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Send message and show answer
+    function sendMessage() {
+        const userInput = document.getElementById('user-input').value.trim();
+        const chatbotBody = document.getElementById('chatbot-body');
+        const userMessage = document.createElement('p');
+        userMessage.style.backgroundColor = '#e0c3a1';  // Light background for user messages
+        userMessage.textContent = `You: ${userInput}`;
+        chatbotBody.appendChild(userMessage);
+
+        if (faqData[userInput]) {
+            const botMessage = document.createElement('p');
+            botMessage.style.backgroundColor = '#f4e1d2';  // Light background for bot messages
+            botMessage.textContent = `Bot: ${faqData[userInput]}`;
+            chatbotBody.appendChild(botMessage);
+        } else {
+            const botMessage = document.createElement('p');
+            botMessage.style.backgroundColor = '#f4e1d2';
+            botMessage.textContent = "Bot: I'm sorry, I don't have an answer to that.";
+            chatbotBody.appendChild(botMessage);
+        }
+
+        // Scroll to the bottom to show the latest message
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+
+        // Clear the input field
+        document.getElementById('user-input').value = '';
+    }
+</script>
+
+
+</body>
+</html>

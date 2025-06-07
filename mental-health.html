@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Donations</title>
+    <link rel="stylesheet" href="mental-health.css">
+</head>
+<nav>
+    <div id="google_translate_element"></div>
+    </nav>
+    
+<body>
+
+    <nav class="navbar">
+        <h1>Mental Health Support</h1>
+        <ul class="nav-links">
+            <li><a href="c1.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#campaigns" class="nav-link">Campaigns</a></li> 
+            <li><a href="#contact" >Contact</a></li>
+            <li><a href="#donate" class="auth-btn">Donate</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Support Mental Health Awareness</h1>
+        <p>Your donations help individuals struggling with mental health challenges.</p>
+    </header>
+    
+
+    <section id="campaigns" class="campaigns">
+        <h2>Ongoing Campaigns</h2>
+    
+        <div class="campaign">
+            <img src="mh2.png" alt="Amit Ahuja">
+            <h3>Amit Ahuja, 28</h3>
+            <p><strong>Cause:</strong> Battling depression after losing his job.</p>
+            <p>John is struggling with severe depression and anxiety due to prolonged unemployment. Your donation can help him access therapy and mental health resources.</p>
+            <p><strong>Target:</strong> ₹900,000</p>
+                
+                <a href="donate.html?name=Amit%20Ahuja&amount=900000&raised=500000" class="donate-button">Donate Now</a>
+        </div>
+    
+        <div class="campaign">
+            <img src="mh1.png" alt="Sarah Jain">
+            <h3>Sarah Jain, 17</h3>
+            <p><strong>Cause:</strong> Struggling with social anxiety and bullying.</p>
+            <p>Sarah has been a victim of severe bullying, which has led to social anxiety. Donations will help her attend counseling and build confidence.</p>
+            </button><a href="donate.html?name=Sarah%20Jain&amount=900000&raised=500000" class="donate-button">Donate Now</a>
+        </div>
+    
+        <div class="campaign">
+            <img src="mh3.png" alt="Ankit Thakur">
+            <h3>Ankit Thakur, 35</h3>
+            <p><strong>Cause:</strong> PTSD from military service.</p>
+            <p>Ankit, a veteran, is dealing with PTSD and needs urgent mental health support. Your contributions can help him receive therapy and medical assistance.</p>
+            <a href="donate.html?name=Ankit%20Thakur&amount=10000&raised=500" class="donate-button">Donate Now</a>
+        </div>
+    
+        <div class="campaign">
+            <img src="mh4.png" alt="Sakshi Sinha">
+            <h3>Sakshi Sinha, 22</h3>
+            <p><strong>Cause:</strong> Postpartum depression.</p>
+            <p>Sakshi, a young mother, is struggling with postpartum depression. Your support can provide her access to specialized treatment and community support groups.</p>
+            <a href="donate.html?name=Sakshi%20Sinha&amount=200000&raised=5000" class="donate-button">Donate Now</a>
+        </div>
+    </section>
+    
+   <script>
+   document.querySelectorAll('.donate-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        alert("Thank you for your support! Redirecting to the donation page...");
+        window.location.href = "#donate"; // Change this to your actual donation link
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".nav-link").forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+            if (targetId.startsWith("#")) {
+                e.preventDefault();
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+
+</script>
+
+<section id="contact" class="contact">
+    <h2>📞 Contact Us</h2>
+    <p>Email: <a href="support@causesphere.com">support@causesphere.com</a></p>
+    <p>Phone: 📱 +91 67450-56120</p>
+    <div class="social-media">
+        <a href="#">🌐 Facebook</a> | <a href="#">📸 Instagram</a> | <a href="#">🐦 Twitter</a>
+    </div>
+</section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Mental Health Support CauseSphere
+            <script src="script.js"></script>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        } 
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+</html>

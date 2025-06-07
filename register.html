@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - CauseSphere</title>
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href=login.css>
+    <style>
+        .login-container img{
+            height: 150px;
+        }
+    </style>
+</head>
+<nav>
+    <div id="google_translate_element"></div>
+    </nav>
+    
+<body>
+    <div class="login-container">
+        <img src="logo.png" alt="CauseSphere Logo" height=100px >
+         <div class="logo">CauseSphere</div>
+         <div class="login-box">
+    <h1>Register</h1>
+    <form id="registerForm" onsubmit="return registerUser(event)">
+        <div class="input-box">
+            <input type="text" id="name" placeholder="Name" required>
+            <i class="fa-solid fa-user icon"></i>
+        </div>
+        <div class="input-box">
+            <input type="date" id="date" placeholder="Date" required>
+            <i class="fa-solid fa-date icon"></i>
+        </div>
+        <div class="input-box">
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="input-box">
+            <input type="email" id="email" placeholder="Email" required>
+            <i class="fa-solid fa-envelope icon"></i>
+        </div>
+
+        <div class="input-box">
+            <input type="password" id="password" placeholder="Password" required>
+            <i class="fa-solid fa-eye toggle-password" id="togglePassword" onclick="togglePassword()"></i>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <div class="switch">
+        Have an account already ? <a href="login.html">Login</a>
+    </div>
+        <script>
+            function togglePassword() {
+                var passwordInput = document.getElementById("password");
+                var icon = document.getElementById("togglePassword");
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    icon.classList.remove("fa-eye-slash");
+                    icon.classList.add("fa-eye");
+                } else {
+                    passwordInput.type = "password";
+                    icon.classList.remove("fa-eye");
+                    icon.classList.add("fa-eye-slash");
+                }
+            }
+          
+        function registerUser(event) {
+            event.preventDefault();
+
+            
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            
+            localStorage.setItem('registered', true);
+            localStorage.setItem('name', name);
+            localStorage.setItem('date', date);
+            localStorage.setItem('phone', phone);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+            
+            localStorage.setItem('loggedIn', true);  
+            alert('Registration Successful! You are now logged in.');
+
+           
+            window.location.href = 'c1.html'; 
+        }
+    </script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+              {pageLanguage: 'en'},
+              'google_translate_element'
+          );
+      } 
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

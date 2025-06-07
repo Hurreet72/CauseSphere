@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - CauseSphere</title>
+    <link rel="stylesheet" href="donate.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .donation-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        h2 {
+            color: #8b5e3c;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .donation-button {
+            background-color: #8b5e3c;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .donation-button:hover {
+            background-color: #6d4931;
+        }
+
+        .back-link {
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #8b5e3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            height: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .progress-bar div {
+            height: 100%;
+            background-color: #8b5e3c;
+            border-radius: 10px;
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<nav>
+    <div id="google_translate_element"></div>
+    </nav>
+    
+<body>
+
+    <div class="donation-container">
+        <h2>Donate to <span id="person-name"></span></h2>
+        <p>Your contribution will help <span id="person-name-again"></span> with their treatment and recovery.</p>
+
+        <p><strong>Target:</strong> ₹<span id="target-amount"></span></p>
+        <p><strong>Raised:</strong> ₹<span id="raised-amount"></span></p>
+
+        <div class="progress-bar">
+            <div id="progress-bar-fill"></div>
+        </div>
+
+        <form id="donationForm" onsubmit="handleDonation(event)">
+            <label for="name">Your Name</label>
+            <input type="text" id="donorName" name="donorName" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="donorEmail" name="donorEmail" required>
+
+            <label for="donationAmount">Donation Amount (₹)</label>
+            <input type="number" id="donationAmount" name="donationAmount" required min="1">
+
+            <button type="submit" class="donation-button">Donate Now</button>
+        </form>
+
+        <div class="back-link">
+            <p><a href="c1.html">Back to Home</a></p>
+        </div>
+    </div>
+
+    <script>
+        // 🔹 Get Query Parameters from URL
+        function getQueryParams() {
+            let params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get("name") || "Unknown Person",
+                amount: params.get("amount") || "0",
+                raised: params.get("raised") || "0"
+            };
+        }
+
+        // 🔹 Populate Page with Correct Data
+        let donationData = getQueryParams();
+        document.getElementById("person-name").innerText = donationData.name;
+        document.getElementById("person-name-again").innerText = donationData.name;
+        document.getElementById("target-amount").innerText = donationData.amount;
+        document.getElementById("raised-amount").innerText = donationData.raised;
+
+        // 🔹 Update Progress Bar
+        let progress = (parseInt(donationData.raised) / parseInt(donationData.amount)) * 100;
+        document.getElementById("progress-bar-fill").style.width = progress + "%";
+
+        // 🔹 Handle Donation Form Submission
+        function handleDonation(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Get form data
+            const donorName = document.getElementById("donorName").value;
+            const donorEmail = document.getElementById("donorEmail").value;
+            const donationAmount = document.getElementById("donationAmount").value;
+
+            if (donorName && donorEmail && donationAmount) {
+                // Redirect to Thank You page with parameters
+                window.location.href = `thankyou.html?name=${encodeURIComponent(donorName)}&amount=${donationAmount}&recipient=${encodeURIComponent(donationData.name)}`;
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+<script src="script.js"></script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+          {pageLanguage: 'en'},
+          'google_translate_element'
+      );
+  } 
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

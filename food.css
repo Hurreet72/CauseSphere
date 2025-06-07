@@ -1,0 +1,387 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #6d4931;
+    margin-bottom: 1rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+.initiative {
+    margin: 20px 0;
+    text-align: center;
+}
+.progress-bar {
+    width: 60%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 10px auto;
+    overflow: hidden;
+    position: relative;
+}
+.progress {
+    height: 100%;
+    background-color: #555;
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
+/* Section Styling */
+section {
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+/* Remove Default Link Styles */
+.services a {
+    text-decoration: none;  /* Removes underline */
+    color: #6d4931; /* Changes link color */
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.services a:hover {
+    color: #8b5e3c; /* Changes color on hover */
+}
+
+/* Beautify List Items */
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services li {
+    background: #f5ebe0;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect on List */
+.services li:hover {
+    background: #ebd5c5;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #8b5e3c;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: rgb(81, 8, 8);
+    border-radius: 15px;
+
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.cta {
+    background: #f5b32e;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0px 6px 15px rgba(255, 87, 51, 0.5);
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background: #ffcc00;
+    transform: scale(1.1);
+}
+.donate a {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0px 6px 15px rgba(40, 167, 69, 0.5);
+    margin-top: 20px;
+}
+
+.donate a:hover {
+    background: #218838;
+    transform: scale(1.1);
+    box-shadow: 0px 8px 20px rgba(40, 167, 69, 0.7);
+}
+
+.donate button {
+    background: #725600;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0px 6px 15px rgba(45, 35, 1, 0.5);
+    display: block;
+    margin: 20px auto;
+}
+
+.donate button:hover {
+    background: #6c390a;
+    transform: scale(1.1);
+    box-shadow: 0px 8px 20px rgba(40, 167, 69, 0.7);
+}
+
+.campaigns {
+    padding: 3rem 2rem;
+    background: #f5ebe0;
+    text-align: center;
+    border-radius: 15px;
+    margin: 2rem;
+}
+
+.contact {
+    padding: 3rem 2rem;
+    background: #e0c3a1;
+    text-align: center;
+    border-radius: 15px;
+    margin: 2rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #8b5e3c;
+    color: white;
+}
+button {
+    background-color: #8b5e3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #6d4931;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Social Media Links */
+.social-media a {
+    color: #8b5e3c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+/* Donation Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button {
+    background: #8b5e3c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #6d4931;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: left;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Initially Hidden */
+.hidden {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f5ebe0;
+    border-radius: 8px;
+}
+.logo a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 30px;
+}
+.hero{
+   
+   background-image: url('food.png');
+}
+
+.contact{
+    margin-left: 330px;
+}
+/* Align the Google Translate container to the right */
+#google_translate_element {
+    display: flex;
+    justify-content: flex-end; /* Move to the right */
+    align-items: flex-end; /* Align all items to the right */
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+}
+
+/* Style the Google Translate gadget */
+.goog-te-gadget {
+    background: linear-gradient(135deg, #8b5a2b, #c29a76); /* Gradient brown background */
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack items (dropdown + powered by text) */
+    align-items: flex-end; /* Ensure alignment to the right */
+    transition: transform 0.3s ease-in-out;
+    text-align: right;
+}
+
+/* Align the dropdown to the right */
+#google_translate_element select {
+    background: #f4e1d2; /* Soft beige background */
+    color: #4b2e1e; /* Dark brown text */
+    border: 2px solid #8b5a2b;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Move "Powered by Google Translate" below the dropdown and align to the right */
+.goog-te-gadget span {
+    display: block !important;
+    font-size: 12px;
+    color: black !important;
+    font-weight: bold;
+    margin-top: 5px; /* Space between dropdown and "Powered by" text */
+    text-align: right;
+    width: 100%;
+}
+
+/* Hide Google branding (optional) */
+.goog-logo-link {
+    display: none !important;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food & Hunger Relief</title>
+    <link rel="stylesheet" href="food.css">
+</head>
+<nav>
+    <div id="google_translate_element"></div>
+    </nav>
+    
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="#">Food & Hunger Relief</a></div>
+        <ul class="nav-links">
+            <li><a href="c1.html">Home</a></li>
+            <li><a href="#campaigns">Campaigns</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#donate" class="donate-btn">Donate</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <h1>End Hunger, One Meal at a Time</h1>
+        <p>Your support can provide food to the needy. Every donation counts.</p>
+    </section>
+    
+
+        <h2>Our Initiatives</h2>
+        <div class="initiative">
+            <h3>Community Meal Distribution</h3>
+            <p>Providing meals to the underprivileged.</p>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="70"></div>
+            </div>
+        </div>
+    
+        <div class="initiative">
+            <h3>School Lunch Program</h3>
+            <p>Ensuring children get nutritious meals in school.</p>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="50"></div>
+            </div>
+        </div>
+    
+        <div class="initiative">
+            <h3>Food Bank Support</h3>
+            <p>Stocking food banks to aid struggling families.</p>
+            <div class="progress-bar">
+                <div class="progress" data-percentage="80"></div>
+            </div>
+        </div>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const progressBars = document.querySelectorAll(".progress");
+    
+                progressBars.forEach(bar => {
+                    let percentage = bar.getAttribute("data-percentage");
+                    setTimeout(() => {
+                        bar.style.width = percentage + "%";
+                    }, 500);
+                });
+            });
+        </script>
+    
+    <section id="services" class="services">
+        <h2>🌟 Our Services</h2>
+        <ul>
+            <li onclick="openModal('food')">🥗 Emergency Food Assistance</li>
+            <li onclick="openModal('meal')">🚚 Meal Delivery for Seniors</li>
+            <li onclick="openModal('rescue')">♻ Food Rescue and Waste Reduction</li>
+            <li onclick="openModal('nutrition')">📚 Educational Programs on Nutrition</li>
+        </ul>
+    </section>
+    
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <section id="about" class="about">
+        <h2>🌍 About Us</h2>
+        <p>We are a non-profit organization dedicated to fighting hunger and food insecurity across communities.</p>
+        <button onclick="openAboutModal()">Learn More</button>
+    </section>
+    
+    <!-- Modal for About Us -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAboutModal()">&times;</span>
+            <h3>🌍 More About Us</h3>
+            <p>We work with local communities, food banks, and volunteers to provide nutritious meals to those in need.</p>
+        </div>
+    </div>
+
+    <section id="contact" class="contact">
+        <h2>📞 Contact Us</h2>
+        <p>Email: <a href="mailto:support@causesphere.com">support@causesphere.com</a></p>
+        <p>Phone: 📱 +91 67450-56120</p>
+        <div class="social-media">
+            <a href="#">🌐 Facebook</a> | <a href="#">📸 Instagram</a> | <a href="#">🐦 Twitter</a>
+        </div>
+    </section>
+    
+    <section id="donate" class="donate">
+        <h2>❤ Make a Difference</h2>
+        <p>Your donation helps provide food to those in need.</p>
+        <form id="donateForm">
+            <input type="number" id="donationAmount" placeholder="💰 Enter amount" min="1" required>
+            <button type="submit">Donate Now</button>
+        </form>
+    </section>
+    
+    <footer class="footer">
+        <p>&copy; 2025 CauseSphere. All rights reserved.</p>
+        
+    </footer>
+
+    <script>
+       
+
+            // Dynamic donation message
+            document.getElementById("donateForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                const amount = document.getElementById("donationAmount").value;
+                if (amount && amount > 0) {
+                    alert(`🎉 Thank you for your generous donation of ₹${amount}! Your support means the world to us.`);
+                    this.reset();
+                } else {
+                    alert("⚠ Please enter a valid donation amount.");
+                }
+            });
+       
+
+        function openModal(service) {
+            let title = "";
+            let description = "";
+
+            if (service === "food") {
+                title = "🥗 Emergency Food Assistance";
+                description = "We provide urgent food supplies to those facing food insecurity.";
+            } else if (service === "meal") {
+                title = "🚚 Meal Delivery for Seniors";
+                description = "We deliver nutritious meals to elderly individuals who cannot cook for themselves.";
+            } else if (service === "rescue") {
+                title = "♻ Food Rescue and Waste Reduction";
+                description = "Our team saves surplus food from restaurants and distributes it to those in need.";
+            } else if (service === "nutrition") {
+                title = "📚 Educational Programs on Nutrition";
+                description = "We educate individuals about balanced diets, healthy eating, and food safety.";
+            }
+
+            document.getElementById("modal-title").innerHTML = title;
+            document.getElementById("modal-description").innerHTML = description;
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        function openAboutModal() {
+            document.getElementById("aboutModal").style.display = "flex";
+        }
+
+        function closeAboutModal() {
+            document.getElementById("aboutModal").style.display = "none";
+        }
+    </script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+              {pageLanguage: 'en'},
+              'google_translate_element'
+          );
+      } 
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+</html>
